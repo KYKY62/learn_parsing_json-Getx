@@ -42,7 +42,7 @@ class HomeView extends StatelessWidget {
                         const SizedBox(
                           height: 15.0,
                         ),
-                        Text(homeC.contactSupport!.url),
+                        Text(homeC.contactSupport!.support.url),
                         const SizedBox(
                           height: 15.0,
                         ),

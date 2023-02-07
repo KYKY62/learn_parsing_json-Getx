@@ -39,7 +39,7 @@ class UserService {
         },
       );
       final body = response.body;
-      final result = jsonDecode(body)['support'];
+      final result = jsonDecode(body);
       ContactSupport contactSupport = ContactSupport.fromJson(result);
       return contactSupport;
     } catch (e) {
