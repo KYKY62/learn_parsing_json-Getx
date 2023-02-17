@@ -1,5 +1,6 @@
 import 'package:belajar_parsing_json/data/models/user_model.dart';
 import 'package:belajar_parsing_json/view/home/controller/home_controller.dart';
+import 'package:belajar_parsing_json/view/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,6 +14,11 @@ class HomeView extends StatelessWidget {
         appBar: AppBar(
           title: const Text("Belajar parsing JSON"),
           centerTitle: true,
+          actions: [
+            IconButton(
+                onPressed: () => Get.to(() => LoginView()),
+                icon: const Icon(Icons.login))
+          ],
         ),
         body: FutureBuilder<List<User>>(
           future: homeC.fetchData(),
@@ -42,7 +48,7 @@ class HomeView extends StatelessWidget {
                         const SizedBox(
                           height: 15.0,
                         ),
-                        Text(homeC.contactSupport!.support.url),
+                        Text(homeC.contactSupport?.support.url ?? ""),
                         const SizedBox(
                           height: 15.0,
                         ),
